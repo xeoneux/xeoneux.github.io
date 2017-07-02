@@ -52,7 +52,7 @@
 					activePanelId = null,
 					firstPanelId = null,
 					isLocked = false,
-					hash = window.location.hash.substring(1);
+					hash = window.location.pathname.substring(1);
 
 				if (skel.vars.mobile) {
 
@@ -108,9 +108,9 @@
 
 						// Change hash.
 						if (i == 0)
-							window.location.hash = '#';
+							window.history.pushState(null, null, "/");
 						else
-							window.location.hash = '#' + id;
+							window.history.pushState(null, null, id);
 
 						// Add bottom padding.
 						var x = parseInt($wrapper.css('padding-top')) +
